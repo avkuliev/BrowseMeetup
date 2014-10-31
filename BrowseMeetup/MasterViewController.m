@@ -7,29 +7,34 @@
 //
 
 #import "MasterViewController.h"
+#import "DetailCell.h"
+#import "Group.h"
+#import "MeetupManager.h"
+#import "MeetupCommunicator.h"
 
-#import "DetailViewController.h"
-
-@interface MasterViewController () {
-    NSMutableArray *_objects;
+@interface MasterViewController () <MeetupManagerDelegate>{
+    NSArray *_groups;
+    MeetupManager *_manager;
 }
+
+@property (nonatomic, weak) CLLocationManager *locationManager;
+
 @end
 
 @implementation MasterViewController
-
-- (void)awakeFromNib
-{
-    [super awakeFromNib];
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    
+    _manager = [MeetupManager new];
+    _manager.communicator = [MeetupCommunicator new];
+    _manager.communicator.delegate = _manager;
+    _manager.delegate = self;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(startFetchingGroups:) name:@"kCLAuthorizationStatusAuthorized" object:nil];
 
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-    self.navigationItem.rightBarButtonItem = addButton;
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,15 +43,40 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
-{
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
-    }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+-(void)startFetchingGroups:(NSNotification *)notifiaction {
+
+    [_manager fetchGroupsAtCoordinate:self.locationManager.location.coordinate];
 }
+
+#pragma mark - MeetupManagerDelegate protocol
+
+-(void)didReceiveGroups:(NSArray *)groups {
+    
+    _groups = groups;
+    [self.tableView reloadData];
+}
+
+-(void)fetchingGroupsFailedWithError:(NSError *)error {
+    
+    NSLog(@"Error %@; %@", error, [error localizedDescription]);
+}
+
+
+#pragma mark - Accessors
+
+- (CLLocationManager *)locationManager
+{
+    if (_locationManager) {
+        return _locationManager;
+    }
+    
+    id appDelegate = [[UIApplication sharedApplication] delegate];
+    if ([appDelegate respondsToSelector:@selector(locationManager)]) {
+        _locationManager = [appDelegate performSelector:@selector(locationManager)];
+    }
+    return _locationManager;
+}
+
 
 #pragma mark - Table View
 
@@ -57,33 +87,23 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return _groups.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    DetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    
+    Group *group = _groups[indexPath.row];
+    [cell.nameLabel setText:group.name];
+    [cell.whoLabel setText:group.who];
+    [cell.locationLabel setText:[NSString stringWithFormat:@"%@, %@", group.city, group.country]];
+    [cell.descriptionLabel setText:group.description];
 
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
     return cell;
 }
 
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
-}
 
 /*
 // Override to support rearranging the table view.
@@ -100,14 +120,5 @@
     return YES;
 }
 */
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
-    }
-}
 
 @end

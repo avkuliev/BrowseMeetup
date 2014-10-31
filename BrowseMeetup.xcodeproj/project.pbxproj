@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		895816A91A03C29B00FF5FB0 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 895816A81A03C29B00FF5FB0 /* CoreLocation.framework */; };
+		895816AC1A03C58200FF5FB0 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = 895816AB1A03C58200FF5FB0 /* Group.m */; };
+		895816B01A03CA0B00FF5FB0 /* MeetupCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 895816AF1A03CA0B00FF5FB0 /* MeetupCommunicator.m */; };
+		895816B31A03CED800FF5FB0 /* GroupBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 895816B21A03CED800FF5FB0 /* GroupBuilder.m */; };
+		895816B71A03D89A00FF5FB0 /* MeetupManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 895816B61A03D89A00FF5FB0 /* MeetupManager.m */; };
+		895816B91A03E19B00FF5FB0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 895816B81A03E19B00FF5FB0 /* README.md */; };
 		89D012C41A0282220003DE72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D012C31A0282220003DE72 /* Foundation.framework */; };
 		89D012C61A0282220003DE72 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D012C51A0282220003DE72 /* CoreGraphics.framework */; };
 		89D012C81A0282230003DE72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D012C71A0282220003DE72 /* UIKit.framework */; };
@@ -15,13 +21,13 @@
 		89D012D41A0282230003DE72 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D012D31A0282230003DE72 /* AppDelegate.m */; };
 		89D012D71A0282230003DE72 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D012D51A0282230003DE72 /* Main.storyboard */; };
 		89D012DA1A0282230003DE72 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D012D91A0282230003DE72 /* MasterViewController.m */; };
-		89D012DD1A0282230003DE72 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D012DC1A0282230003DE72 /* DetailViewController.m */; };
 		89D012DF1A0282230003DE72 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 89D012DE1A0282230003DE72 /* Images.xcassets */; };
 		89D012E61A0282230003DE72 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D012E51A0282230003DE72 /* XCTest.framework */; };
 		89D012E71A0282230003DE72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D012C31A0282220003DE72 /* Foundation.framework */; };
 		89D012E81A0282230003DE72 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89D012C71A0282220003DE72 /* UIKit.framework */; };
 		89D012F01A0282230003DE72 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 89D012EE1A0282230003DE72 /* InfoPlist.strings */; };
 		89D012F21A0282230003DE72 /* BrowseMeetupTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D012F11A0282230003DE72 /* BrowseMeetupTests.m */; };
+		89D012FD1A0287660003DE72 /* DetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89D012FC1A0287660003DE72 /* DetailCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		895816A81A03C29B00FF5FB0 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		895816AA1A03C58200FF5FB0 /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
+		895816AB1A03C58200FF5FB0 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
+		895816AD1A03C85100FF5FB0 /* MeetupCommunicatorDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetupCommunicatorDelegate.h; sourceTree = "<group>"; };
+		895816AE1A03CA0B00FF5FB0 /* MeetupCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetupCommunicator.h; sourceTree = "<group>"; };
+		895816AF1A03CA0B00FF5FB0 /* MeetupCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetupCommunicator.m; sourceTree = "<group>"; };
+		895816B11A03CED800FF5FB0 /* GroupBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupBuilder.h; sourceTree = "<group>"; };
+		895816B21A03CED800FF5FB0 /* GroupBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupBuilder.m; sourceTree = "<group>"; };
+		895816B41A03D57700FF5FB0 /* MeetupManagerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetupManagerDelegate.h; sourceTree = "<group>"; };
+		895816B51A03D89A00FF5FB0 /* MeetupManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeetupManager.h; sourceTree = "<group>"; };
+		895816B61A03D89A00FF5FB0 /* MeetupManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeetupManager.m; sourceTree = "<group>"; };
+		895816B81A03E19B00FF5FB0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		89D012C01A0282220003DE72 /* BrowseMeetup.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrowseMeetup.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D012C31A0282220003DE72 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		89D012C51A0282220003DE72 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,14 +66,14 @@
 		89D012D61A0282230003DE72 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		89D012D81A0282230003DE72 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		89D012D91A0282230003DE72 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		89D012DB1A0282230003DE72 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		89D012DC1A0282230003DE72 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		89D012DE1A0282230003DE72 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		89D012E41A0282230003DE72 /* BrowseMeetupTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BrowseMeetupTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89D012E51A0282230003DE72 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		89D012ED1A0282230003DE72 /* BrowseMeetupTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BrowseMeetupTests-Info.plist"; sourceTree = "<group>"; };
 		89D012EF1A0282230003DE72 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		89D012F11A0282230003DE72 /* BrowseMeetupTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrowseMeetupTests.m; sourceTree = "<group>"; };
+		89D012FB1A0287660003DE72 /* DetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailCell.h; sourceTree = "<group>"; };
+		89D012FC1A0287660003DE72 /* DetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				895816A91A03C29B00FF5FB0 /* CoreLocation.framework in Frameworks */,
 				89D012C61A0282220003DE72 /* CoreGraphics.framework in Frameworks */,
 				89D012C81A0282230003DE72 /* UIKit.framework in Frameworks */,
 				89D012C41A0282220003DE72 /* Foundation.framework in Frameworks */,
@@ -85,6 +104,7 @@
 		89D012B71A0282220003DE72 = {
 			isa = PBXGroup;
 			children = (
+				895816B81A03E19B00FF5FB0 /* README.md */,
 				89D012C91A0282230003DE72 /* BrowseMeetup */,
 				89D012EB1A0282230003DE72 /* BrowseMeetupTests */,
 				89D012C21A0282220003DE72 /* Frameworks */,
@@ -104,6 +124,7 @@
 		89D012C21A0282220003DE72 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				895816A81A03C29B00FF5FB0 /* CoreLocation.framework */,
 				89D012C31A0282220003DE72 /* Foundation.framework */,
 				89D012C51A0282220003DE72 /* CoreGraphics.framework */,
 				89D012C71A0282220003DE72 /* UIKit.framework */,
@@ -118,10 +139,20 @@
 				89D012D21A0282230003DE72 /* AppDelegate.h */,
 				89D012D31A0282230003DE72 /* AppDelegate.m */,
 				89D012D51A0282230003DE72 /* Main.storyboard */,
+				89D012FB1A0287660003DE72 /* DetailCell.h */,
+				89D012FC1A0287660003DE72 /* DetailCell.m */,
 				89D012D81A0282230003DE72 /* MasterViewController.h */,
 				89D012D91A0282230003DE72 /* MasterViewController.m */,
-				89D012DB1A0282230003DE72 /* DetailViewController.h */,
-				89D012DC1A0282230003DE72 /* DetailViewController.m */,
+				895816AA1A03C58200FF5FB0 /* Group.h */,
+				895816AB1A03C58200FF5FB0 /* Group.m */,
+				895816B11A03CED800FF5FB0 /* GroupBuilder.h */,
+				895816B21A03CED800FF5FB0 /* GroupBuilder.m */,
+				895816B51A03D89A00FF5FB0 /* MeetupManager.h */,
+				895816B61A03D89A00FF5FB0 /* MeetupManager.m */,
+				895816B41A03D57700FF5FB0 /* MeetupManagerDelegate.h */,
+				895816AE1A03CA0B00FF5FB0 /* MeetupCommunicator.h */,
+				895816AF1A03CA0B00FF5FB0 /* MeetupCommunicator.m */,
+				895816AD1A03C85100FF5FB0 /* MeetupCommunicatorDelegate.h */,
 				89D012DE1A0282230003DE72 /* Images.xcassets */,
 				89D012CA1A0282230003DE72 /* Supporting Files */,
 			);
@@ -235,6 +266,7 @@
 			files = (
 				89D012DF1A0282230003DE72 /* Images.xcassets in Resources */,
 				89D012CE1A0282230003DE72 /* InfoPlist.strings in Resources */,
+				895816B91A03E19B00FF5FB0 /* README.md in Resources */,
 				89D012D71A0282230003DE72 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,10 +286,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				895816B01A03CA0B00FF5FB0 /* MeetupCommunicator.m in Sources */,
 				89D012D41A0282230003DE72 /* AppDelegate.m in Sources */,
 				89D012DA1A0282230003DE72 /* MasterViewController.m in Sources */,
+				895816AC1A03C58200FF5FB0 /* Group.m in Sources */,
+				895816B31A03CED800FF5FB0 /* GroupBuilder.m in Sources */,
+				895816B71A03D89A00FF5FB0 /* MeetupManager.m in Sources */,
+				89D012FD1A0287660003DE72 /* DetailCell.m in Sources */,
 				89D012D01A0282230003DE72 /* main.m in Sources */,
-				89D012DD1A0282230003DE72 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +498,7 @@
 				89D012F71A0282230003DE72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89D012F81A0282230003DE72 /* Build configuration list for PBXNativeTarget "BrowseMeetupTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +507,7 @@
 				89D012FA1A0282230003DE72 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
